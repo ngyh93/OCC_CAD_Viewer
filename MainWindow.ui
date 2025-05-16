@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1043</width>
+    <height>851</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OCC Viewer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="8,2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,8">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideLeft</enum>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>Tree View</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="leftMargin">
+             <number>1</number>
+            </property>
+            <property name="topMargin">
+             <number>1</number>
+            </property>
+            <property name="rightMargin">
+             <number>1</number>
+            </property>
+            <property name="bottomMargin">
+             <number>1</number>
+            </property>
+            <item>
+             <widget class="QTreeView" name="treeView"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="Tab2">
+           <attribute name="title">
+            <string>Property Table</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>1</number>
+            </property>
+            <property name="leftMargin">
+             <number>1</number>
+            </property>
+            <property name="topMargin">
+             <number>1</number>
+            </property>
+            <property name="rightMargin">
+             <number>1</number>
+            </property>
+            <property name="bottomMargin">
+             <number>1</number>
+            </property>
+            <item>
+             <widget class="QListView" name="propertyListView"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QMdiArea" name="mdiArea">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="activationOrder">
+           <enum>QMdiArea::CreationOrder</enum>
+          </property>
+          <property name="viewMode">
+           <enum>QMdiArea::TabbedView</enum>
+          </property>
+          <property name="documentMode">
+           <bool>true</bool>
+          </property>
+          <property name="tabsClosable">
+           <bool>true</bool>
+          </property>
+          <property name="tabsMovable">
+           <bool>true</bool>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Triangular</enum>
+          </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::South</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="output_text"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1043</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="newDocument"/>
+    <addaction name="closeDocument"/>
+    <addaction name="closeAllDocument"/>
+    <addaction name="importStep"/>
+    <addaction name="exportStep"/>
+   </widget>
+   <widget class="QMenu" name="menuLabel">
+    <property name="title">
+     <string>Label</string>
+    </property>
+    <addaction name="labelFace"/>
+   </widget>
+   <widget class="QMenu" name="menuSelection">
+    <property name="title">
+     <string>Selection</string>
+    </property>
+    <addaction name="selectBody"/>
+    <addaction name="selectFace"/>
+    <addaction name="selectEdge"/>
+    <addaction name="selectVertex"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFront"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionLeft"/>
+    <addaction name="actionRight"/>
+    <addaction name="actionTop"/>
+    <addaction name="actionBottom"/>
+    <addaction name="actionIsometric"/>
+    <addaction name="separator"/>
+    <addaction name="actionPerspective"/>
+    <addaction name="actionOrthographic"/>
+    <addaction name="separator"/>
+    <addaction name="actionWireframe"/>
+    <addaction name="actionHLR"/>
+    <addaction name="actionShaded"/>
+    <addaction name="separator"/>
+    <addaction name="actionRaytracing"/>
+    <addaction name="actionRasterization"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSelection"/>
+   <addaction name="menuView"/>
+   <addaction name="menuLabel"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="importStep">
+   <property name="text">
+    <string>Import STEP</string>
+   </property>
+  </action>
+  <action name="exportStep">
+   <property name="text">
+    <string>Export Step</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="labelFace">
+   <property name="text">
+    <string>Label Face</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="selectFace">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Face</string>
+   </property>
+  </action>
+  <action name="selectEdge">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Edge</string>
+   </property>
+  </action>
+  <action name="closeAllDocument">
+   <property name="text">
+    <string>Close All Document</string>
+   </property>
+  </action>
+  <action name="newDocument">
+   <property name="text">
+    <string>New Document</string>
+   </property>
+  </action>
+  <action name="closeDocument">
+   <property name="text">
+    <string>Close Document</string>
+   </property>
+  </action>
+  <action name="actionFront">
+   <property name="text">
+    <string>Front View</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="text">
+    <string>Back View</string>
+   </property>
+  </action>
+  <action name="actionLeft">
+   <property name="text">
+    <string>Left View</string>
+   </property>
+  </action>
+  <action name="actionRight">
+   <property name="text">
+    <string>Right View</string>
+   </property>
+  </action>
+  <action name="actionTop">
+   <property name="text">
+    <string>Top View</string>
+   </property>
+  </action>
+  <action name="actionBottom">
+   <property name="text">
+    <string>Bottom View</string>
+   </property>
+  </action>
+  <action name="actionWireframe">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Wireframe</string>
+   </property>
+  </action>
+  <action name="actionShaded">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Shaded</string>
+   </property>
+  </action>
+  <action name="actionRaytracing">
+   <property name="text">
+    <string>Raytracing</string>
+   </property>
+  </action>
+  <action name="actionRasterization">
+   <property name="text">
+    <string>Rasterization</string>
+   </property>
+  </action>
+  <action name="actionIsometric">
+   <property name="text">
+    <string>Isometric View</string>
+   </property>
+  </action>
+  <action name="selectVertex">
+   <property name="text">
+    <string>Vertex</string>
+   </property>
+  </action>
+  <action name="selectBody">
+   <property name="text">
+    <string>Body</string>
+   </property>
+  </action>
+  <action name="actionPerspective">
+   <property name="text">
+    <string>Perspective</string>
+   </property>
+  </action>
+  <action name="actionOrthographic">
+   <property name="text">
+    <string>Orthographic</string>
+   </property>
+  </action>
+  <action name="actionHLR">
+   <property name="text">
+    <string>Hidden Line Removal</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>closeAllDocument</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>closeAllSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>109</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeDocument</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>closeActiveSubWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>109</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
